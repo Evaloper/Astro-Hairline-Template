@@ -1,0 +1,82 @@
+---
+import Card from "./Card.astro";
+const featuresData = [
+  {
+    title: "Men Haircut",
+    body: "aperiam porro, esse laborum impedit nesciunt ut voluptatum assumenda aspernatur libero iusto error molestias dolorum, necessitatibus labore?",
+  },
+  {
+    title: "Women Cut",
+    body: "Naperiam porro, esse laborum impedit nesciunt ut voluptatum assumenda aspernatur libero iusto error molestias dolorum, necessitatibus labore?",
+  },
+  {
+    title: "Weaving & Braiding",
+    body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ipsum deserunt inventore ut voluptate, officia maiores repellat tenetur praesentium omnis est ex tempora a necessitatibus reiciendis at et dignissimos.",
+  },
+  {
+    title: "Hair Coloring",
+    body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ipsum deserunt inventore ut voluptate, officia maiores repellat tenetur praesentium omnis est ex tempora a necessitatibus reiciendis at et dignissimos.",
+  },
+];
+---
+
+<section class="features">
+  <div class="price">
+    <h2 class="amazing">Amazing</h2>
+    <h2 class="price-heading">Pricing Plan</h2>
+  </div>
+  <div class="container">
+    {
+      featuresData.map((feature) => (
+        <Card>
+          <h3>{feature.title}</h3>
+          <p>{feature.body}</p>
+        </Card>
+      ))
+    }
+  </div>
+</section>
+<style>
+  .features {
+    background-color: #ae8e6f30;
+    padding-bottom: 50px;
+  }
+
+  .features .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    padding: 0 20px;
+    margin: 30px auto;
+  }
+
+  .price {
+    text-align: center;
+    margin: 70px 0;
+    padding-top: 50px;
+  }
+
+  .amazing {
+    font-family: "Herr Von Muellerhoff", cursive;
+    font-size: 70px;
+    letter-spacing: 8px;
+    font-weight: lighter;
+    color: var(--color-secondary);
+  }
+
+  .price-heading {
+    letter-spacing: 8px;
+  }
+
+  @media (max-width: 800px) {
+    .features .container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 500px) {
+    .features .container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

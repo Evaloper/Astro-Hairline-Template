@@ -1,0 +1,166 @@
+---
+import { Image } from "astro:assets";
+import Facebook from "../../public/images/facebook.svg";
+import Instagram from "../../public/images/instagram.svg";
+import Whatsapp from "../../public/images/whatsapp.svg";
+import Twitter from "../../public/images/twitter-154-svgrepo-com.svg";
+import Youtube from "../../public/images/youtube-168-svgrepo-com.svg";
+---
+
+<footer class="footer">
+  <div class="">
+    <div class="container">
+      <div class="newsletter">
+        <h3>Newsletter</h3>
+        <div>
+          <p>Sign up for mailing list to get latest updates and offers.</p>
+          <form>
+            <input
+              type="email"
+              name="mail"
+              id="mail"
+              placeholder="Input email"
+              class="news-inp"
+            />
+            <button class="sub-btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="links">
+        <h3>Links</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="about">About</a></li>
+          <li><a href="/Blog">Blog</a></li>
+        </ul>
+      </div>
+      <div class="address">
+        <h3>Contact Address</h3>
+        <p>office Address: 34c refinery Road, Victoria Street, NYC</p>
+        <p>Telephone: + 45 345 678 982</p>
+        <p>Email: info@companyname.com</p>
+      </div>
+    </div>
+  </div>
+  <div class="copyright container">
+    <div>
+      <p>© 2023 Copyright Oghenefejiro Gbaje Theme</p>
+    </div>
+    <div class="social-icons">
+      <div class="fb">
+        <a href="facebook.com">
+          <Image src={Facebook} alt="facebook.com/username" />
+        </a>
+      </div>
+      <div class="insta">
+        <a href="instagram.com">
+          <Image src={Instagram} alt="instagram.com/username" />
+        </a>
+      </div>
+      <div class="whatsapp">
+        <a href="/">
+          <Image src={Whatsapp} alt="Whatsapp" />
+        </a>
+      </div>
+      <div class="twitter">
+        <a href="twitter.com">
+          <Image src={Twitter} alt="twitter.com/username" />
+        </a>
+      </div>
+      <div class="youtube">
+        <a href="youtube.com">
+          <Image src={Youtube} alt="Youtube" />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: var(--color-primary);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 60px;
+    font-size: 14px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+
+  .footer .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .news-inp {
+    padding: 0.5rem;
+    border: none;
+  }
+
+  .sub-btn {
+    background-color: var(--color-secondary);
+    padding: 0.5rem;
+    border: none;
+    color: #fff;
+  }
+
+  .newsletter,
+  .links {
+    margin-bottom: 40px;
+  }
+
+  .newsletter,
+  .address {
+    width: 40%%;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    align-items: center;
+  }
+
+  .copyright {
+    border-top: 1px solid #4542425d;
+    align-items: center;
+    padding-top: 25px;
+  }
+
+  .fb img,
+  .insta img,
+  .whatsapp img,
+  .twitter img,
+  .youtube img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .footer a {
+    color: rgb(60, 60, 219);
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .footer h3 {
+    margin-bottom: 10px;
+    font-size: 1.17rem;
+  }
+
+  .footer div:nth-child(1) {
+    text-align: left;
+  }
+
+  @media (max-width: 500px) {
+    /* .footer div:nth-child(2) {
+        display: none;
+      } */
+
+    .footer .container {
+      display: block;
+    }
+  }
+</style>

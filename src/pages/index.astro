@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Showcase from "../components/Showcase.astro";
+import Prices from "../components/Prices.astro";
+import Tabs from "../components/Tabs.astro";
+import Aboutus from "../components/Aboutus.astro";
+import Contactus from "../components/Contactus.astro";
+---
+
+<Layout title="Taddy Hairline">
+  <Showcase showExtra={true} />
+  <Aboutus />
+  <section class="container services">
+    <div class="service-sect">
+      <h2 class="discover">Discover</h2>
+      <h2 class="service-heading">Exclusive Services</h2>
+    </div>
+    <!-- Tabs -->
+    <!-- Add activeTextColor='preferred color' to change the link text color to any preferred color  -->
+    <Tabs
+      headings={[
+        "BRAIDS & TWISTS",
+        "HAIR COLOR",
+        "HAIR EXTENSION",
+        "HAIR CUT",
+        "WEAVING",
+        "DREAD LOCK",
+      ]}
+      contents={[
+        "Braids & Twists adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
+        "Hair Color adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
+        "Hair Extension adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
+        "Hair Cut adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
+        "Weaving adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
+        "Dread Lock adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
+      ]}
+    />
+  </section>
+  <Prices />
+  <Contactus />
+</Layout>
+
+<style>
+  .services {
+    margin-top: 50px;
+  }
+
+  .service-sect {
+    text-align: center;
+    padding: 50px 0;
+  }
+
+  .discover {
+    font-family: "Herr Von Muellerhoff", cursive;
+    font-size: 70px;
+    letter-spacing: 8px;
+    font-weight: lighter;
+    color: var(--color-secondary);
+  }
+
+  .service-heading {
+    letter-spacing: 8px;
+  }
+</style>
