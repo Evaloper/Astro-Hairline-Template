@@ -14,23 +14,30 @@ import Mail from "../../public/images/mail-svgrepo-com.svg";
     </div>
     <div class="contact-sect">
       <div class="contact-inp">
-        <form>
+        <form action="">
           <h3>GET IN TOUCH</h3>
           <div class="input">
-            <label for="name">Your Name (required)</label><br />
-            <input type="text" name="" id="" />
+            <label for="fullname">Your Name (required)</label><br />
+            <input
+              type="text"
+              name="fullname"
+              id="fullname"
+              autocomplete="on"
+            />
           </div>
           <div class="input">
-            <label for="email">Your Email(required)</label><br />
-            <input type="email" name="email" id="" />
+            <label for="email" id="contact-form">Your Email(required)</label><br
+            />
+            <input type="email" name="email" id="email" autocomplete="on" />
           </div>
           <div class="input">
             <label for="subject">Subject</label><br />
-            <input type="email" name="email" id="" />
+            <input type="text" name="subject" id="subject" autocomplete="on" />
           </div>
           <div class="input">
             <label for="message">Your Message</label><br />
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <textarea name="message" id="message" cols="30" rows="10"
+            ></textarea>
           </div>
           <button class="btn send-btn">Send</button>
         </form>
@@ -125,7 +132,7 @@ import Mail from "../../public/images/mail-svgrepo-com.svg";
     .contact-card {
       width: 30%;
       text-align: left;
-      height: 75vh;
+      height: 80vh;
     }
 
     .hurry {
@@ -209,8 +216,12 @@ import Mail from "../../public/images/mail-svgrepo-com.svg";
         width: 100%;
       }
 
-      .contact-card {
+      /* .contact-card {
         height: 60vh;
+      } */
+
+      .address {
+        margin-top: 85px;
       }
     }
   </style>
