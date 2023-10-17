@@ -18,22 +18,53 @@ import Contactus from "../components/Contactus.astro";
     <!-- Tabs -->
     <!-- Add activeTextColor='preferred color' to change the link text color to any preferred color  -->
     <Tabs
-      headings={[
-        "BRAIDS & TWISTS",
-        "HAIR COLOR",
-        "HAIR EXTENSION",
-        "HAIR CUT",
-        "WEAVING",
-        "DREAD LOCK",
+      tabs={[
+        {
+          heading: "BRAIDS & TWISTS",
+          content:
+            "Braids & Twists adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          image: "/images/weaving.jpg",
+          price: "$40.00 Per Head",
+        },
+        {
+          heading: "HAIR COLOR",
+          content:
+            "Hair Color adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          image: "/images/multipleladiescolor.jpg",
+          price: "$35.00 Per Head",
+        },
+        {
+          heading: "Hair Extension",
+          content:
+            "Hair extension adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          image: "/images/hair-extension.jpg",
+          price: "$255.00 Per Head",
+        },
+        {
+          heading: "Hair Cut",
+          content:
+            "Hair Cut adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          image: "/images/mencut.jpg",
+          price: "$25.00 Per Head",
+        },
+        {
+          heading: "Weaving",
+          content:
+            "Hair Weaving adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          image: "/images/weavings.jpg",
+          price: "$85.00 Per Head",
+        },
+        {
+          heading: "Dread Locs",
+          content:
+            "Hair Locs adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          image: "/images/locs.jpg",
+          price: "$750.00 Per Head",
+        },
+
+        // ... and so on for other tabs
       ]}
-      contents={[
-        "Braids & Twists adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
-        "Hair Color adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
-        "Hair Extension adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
-        "Hair Cut adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
-        "Weaving adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
-        "Dread Lock adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
-      ]}
+      activeTextColor="#A741FF"
     />
   </section>
   <Prices />

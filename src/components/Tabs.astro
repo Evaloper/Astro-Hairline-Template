@@ -1,25 +1,42 @@
 ---
 export interface Props {
   activeTextColor?: string;
-  headings: string[];
-  contents: string[];
+  tabs: { heading: string; content: string; image: string; price: string }[];
 }
 
-const {
-  headings,
-  contents,
-  activeTextColor = "#A741FF",
-} = Astro.props as Props;
+const { tabs, activeTextColor = "#7e6b59" } = Astro.props as Props;
 ---
 
 <div class="tabs">
   <ul class="tabs-header">
-    {headings.map((heading) => <li>{heading}</li>)}
+    {
+      tabs.map((tab, index) => {
+        return (
+          <>
+            <li class="tab-header-list">{tab.heading}</li>
+          </>
+        );
+      })
+    }
+    <button class="btn list-btn">Book An Appointment</button>
   </ul>
-  <div>
+  <div class="tabs-content-div">
     <h3 class="tabs-desc-header">Description</h3>
     <ul class="tabs-content">
-      {contents.map((content) => <li>{content}</li>)}
+      {
+        tabs.map((tab, index) => {
+          return (
+            <li class="tab-list">
+              <img src={tab.image} alt="Image" />
+              <div>
+                <p class="tab-heading">{tab.heading}</p>
+                <h5 class="tab-price">{tab.price}</h5>
+                <p>{tab.content}</p>
+              </div>
+            </li>
+          );
+        })
+      }
     </ul>
   </div>
 </div>
@@ -35,7 +52,28 @@ const {
     background: #333;
     color: #fff;
     padding: 10px 20px;
-    width: 100%;
+    width: 30%;
+  }
+
+  .tab-header-list {
+    font-size: 20px;
+    padding: 20px;
+    border-bottom: 1px dashed;
+  }
+
+  .tab-heading {
+    letter-spacing: 5px;
+  }
+
+  .tabs-content-div {
+    background-color: #f4f4f4;
+  }
+
+  .tab-list img {
+    height: 40vh;
+    margin: auto;
+    text-align: center;
+    display: block;
   }
 
   .tabs-header li {
@@ -47,41 +85,64 @@ const {
     padding: 20px;
   }
 
+  .tab-price {
+    color: #7e6b59;
+  }
+
+  .list-btn {
+    margin-top: 20px;
+  }
+
   .tabs-content {
     font-size: 18px;
     padding: 20px;
     background: #f4f4f4;
   }
+
+  @media screen and (max-width: 600px) {
+    .tabs {
+      display: block;
+    }
+
+    .tabs-header {
+      width: 100%;
+    }
+
+    .list-btn {
+      display: block;
+      margin: 20px auto;
+    }
+  }
 </style>
 
 <script define:vars={{ activeTextColor }}>
 function createTabs(element) {
-    const header = element.querySelector(".tabs-header");
-    const content = element.querySelector(".tabs-content");
-    const tab_headers = [...header.children];
-    const tab_contents = [...content.children];
-    tab_contents.forEach((x) => (x.style.display = "none"));
-    let current_tab_index = -1;
+  const header = element.querySelector(".tabs-header");
+  const content = element.querySelector(".tabs-content");
+  const tab_headers = [...header.children];
+  const tab_contents = [...content.children];
+  tab_contents.forEach((x) => (x.style.display = "none"));
+  let current_tab_index = -1;
 
-    function setTab(index) {
-        if (current_tab_index > -1) {
-            tab_headers[current_tab_index].style.fontWeight = 400;
-            tab_headers[current_tab_index].style.color = "#fff";
-            tab_contents[current_tab_index].style.display = "none";
-        }
-        tab_headers[index].style.fontWeight = 800;
-        tab_headers[index].style.color = activeTextColor;
-        tab_contents[index].style.display = "flex";
-        current_tab_index = index;
+  function setTab(index) {
+    if (current_tab_index > -1) {
+      tab_headers[current_tab_index].style.fontWeight = 400;
+      tab_headers[current_tab_index].style.color = "#fff";
+      tab_contents[current_tab_index].style.display = "none";
     }
+    tab_headers[index].style.fontWeight = 800;
+    tab_headers[index].style.color = "#7e6b59";
+    tab_contents[index].style.display = "block";
+    current_tab_index = index;
+  }
 
-    let default_tab_index = tab_headers.findIndex((x) => {
-        return [...x.classList].indexOf("default-tab") > -1;
-    });
+  let default_tab_index = tab_headers.findIndex((x) => {
+    return [...x.classList].indexOf("default-tab") > -1;
+  });
 
-    default_tab_index = default_tab_index === -1 ? 0 : default_tab_index;
-    setTab(default_tab_index);
-    tab_headers.forEach((x, i) => (x.onclick = (event) => setTab(i)));
+  default_tab_index = default_tab_index === -1 ? 0 : default_tab_index;
+  setTab(default_tab_index);
+  tab_headers.forEach((x, i) => (x.onclick = (event) => setTab(i)));
 }
 
 // Run
