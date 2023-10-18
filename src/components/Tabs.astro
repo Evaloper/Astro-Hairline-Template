@@ -18,7 +18,9 @@ const { tabs, activeTextColor = "#7e6b59" } = Astro.props as Props;
         );
       })
     }
-    <button class="btn list-btn">Book An Appointment</button>
+    <a href="/appointment"
+      ><button class="btn list-btn">Book An Appointment</button></a
+    >
   </ul>
   <div class="tabs-content-div">
     <h3 class="tabs-desc-header">Description</h3>
@@ -150,5 +152,5 @@ function createTabs(element) {
 }
 
 // Run
-[...document.querySelectorAll(".tabs")].forEach((x) => createTabs(x));
+  [...document.querySelectorAll(".tabs")].forEach((x) => createTabs(x));
 </script>

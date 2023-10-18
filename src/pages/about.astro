@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import AboutusImage from "../../public/images/HairImage1.jpeg";
-import Services from "../components/Services.astro";
+import Service from "../components/Service.astro";
 import Price from "../components/Price.astro";
 ---
 
@@ -30,7 +30,7 @@ import Price from "../components/Price.astro";
       </div>
     </div>
   </section>
-  <Services />
+  <Service />
   <Price />
 </Layout>
 
@@ -43,6 +43,8 @@ import Price from "../components/Price.astro";
     padding: 46px;
     margin-bottom: 40px;
     color: #f6f6f6f6;
+    padding-top: 100px;
+    padding-bottom: 50px;
   }
 
   .us {

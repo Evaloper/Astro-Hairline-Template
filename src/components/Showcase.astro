@@ -20,13 +20,13 @@ const {
     <p>
       {text}
     </p>
-    <button class="btn">{btnText}</button>
+    <a href="/services"><button class="btn">{btnText}</button></a>
   </div>
 </section>
 
 <style>
   .showcase {
-    height: 80vh;
+    height: 85vh;
     background-color: var(--color-primary);
     background-image: url(https://i.pinimg.com/564x/ca/df/3b/cadf3b56cbdd5423056a1bf269831e9f.jpg);
     object-fit: contain;
@@ -71,13 +71,24 @@ const {
       font-size: 22px;
     }
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 480px) {
       .showcase h1 {
-        font-size: 38px;
+        font-size: 36px;
       }
 
       .showcase p {
-        font-size: 18px;
+        font-size: 16px;
+      }
+    }
+
+    @media screen and (max-width: 380px) {
+      .showcase h1 {
+        font-size: 32px;
+        padding-top: 30px;
+      }
+
+      .showcase p {
+        font-size: 14px;
       }
     }
   }
