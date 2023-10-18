@@ -55,7 +55,9 @@ const featuresData = [
     {
       featuresData.map((feature) => (
         <Card>
-          <img src={feature.image} alt={feature.title} class="price-img" />
+          <div class="div-img">
+            <img src={feature.image} alt={feature.title} class="price-img" />
+          </div>
           <div class="price-tag">
             <>
               <div class="price-title">
@@ -107,9 +109,15 @@ const featuresData = [
     letter-spacing: 8px;
   }
 
-  .price-img {
-    width: 100%;
+  .div-img {
     height: 150px;
+  }
+
+  .price-img {
+    background-size: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
     filter: brightness(0.4);
   }
 
