@@ -1,95 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Showcase from "../components/Showcase.astro";
-import Prices from "../components/Prices.astro";
-import Tabs from "../components/Tabs.astro";
 import Aboutus from "../components/Aboutus.astro";
+import Services from "../components/Services.astro";
+import Prices from "../components/Price.astro";
 import Contactus from "../components/Contactus.astro";
 ---
 
 <Layout title="Taddy Hairline">
   <Showcase showExtra={true} />
   <Aboutus />
-  <section class="container services">
-    <div class="service-sect">
-      <h2 class="discover">Discover</h2>
-      <h2 class="service-heading">Exclusive Services</h2>
-    </div>
-    <!-- Tabs -->
-    <!-- Add activeTextColor='preferred color' to change the link text color to any preferred color  -->
-    <Tabs
-      tabs={[
-        {
-          heading: "BRAIDS & TWISTS",
-          content:
-            "Braids & Twists adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          image: "/images/weaving.jpg",
-          price: "$40.00 Per Head",
-        },
-        {
-          heading: "HAIR COLOR",
-          content:
-            "Hair Color adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          image: "/images/multipleladiescolor.jpg",
-          price: "$35.00 Per Head",
-        },
-        {
-          heading: "Hair Extension",
-          content:
-            "Hair extension adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          image: "/images/hair-extension.jpg",
-          price: "$255.00 Per Head",
-        },
-        {
-          heading: "Hair Cut",
-          content:
-            "Hair Cut adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          image: "/images/mencut.jpg",
-          price: "$25.00 Per Head",
-        },
-        {
-          heading: "Weaving",
-          content:
-            "Hair Weaving adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          image: "/images/weavings.jpg",
-          price: "$85.00 Per Head",
-        },
-        {
-          heading: "Dread Locs",
-          content:
-            "Hair Locs adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          image: "/images/locs.jpg",
-          price: "$750.00 Per Head",
-        },
-
-        // ... and so on for other tabs
-      ]}
-      activeTextColor="#A741FF"
-    />
-  </section>
+  <Services />
   <Prices />
   <Contactus />
 </Layout>
-
-<style>
-  .services {
-    margin-top: 50px;
-  }
-
-  .service-sect {
-    text-align: center;
-    padding: 50px 0;
-  }
-
-  .discover {
-    font-family: "Herr Von Muellerhoff", cursive;
-    font-size: 70px;
-    letter-spacing: 8px;
-    font-weight: lighter;
-    color: var(--color-secondary);
-  }
-
-  .service-heading {
-    letter-spacing: 8px;
-  }
-</style>

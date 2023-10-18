@@ -1,0 +1,259 @@
+---
+import Card from "./Card.astro";
+import Phone from "../../public/images/phone-svgrepo-com.svg";
+import { Image } from "astro:assets";
+import Location from "../../public/images/location.svg";
+import Mail from "../../public/images/mail-svgrepo-com.svg";
+---
+
+<section class="container">
+  <div class="contact-us">
+    <div class="contact">
+      <h2 class="hurry">Hurry</h2>
+      <h2 class="contact-us-heading">Book an Appointment</h2>
+    </div>
+    <div class="contact-sect">
+      <div class="contact-inp">
+        <form action="">
+          <div class="input">
+            <label for="date">Appointmet Date (required)</label><br />
+            <input
+              type="date"
+              name="date"
+              id="date"
+              autocomplete="on"
+              placeholder="mm/dd/yyyy"
+              required
+            />
+          </div>
+          <div class="input">
+            <label for="time">Appointment Time</label><br />
+            <input
+              type="time"
+              name="time"
+              id="time"
+              autocomplete="on"
+              required
+            />
+          </div>
+          <div class="input">
+            <label for="fullname">Your Name (required)</label><br />
+            <input
+              type="text"
+              name="fullname"
+              id="fullname"
+              autocomplete="on"
+              required
+            />
+          </div>
+          <div class="input">
+            <label for="email" id="contact-form">Your Email(required)</label><br
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              autocomplete="on"
+              required
+            />
+          </div>
+          <div class="input">
+            <label for="message">Note (Optional)</label><br />
+            <textarea name="message" id="message" cols="30" rows="10"
+            ></textarea>
+          </div>
+          <button class="btn send-btn">Send</button>
+        </form>
+      </div>
+      <div class="contact-card">
+        <Card dark={true}>
+          <h3 class="address">Address</h3>
+          <div class="add">
+            <div class="location-icon">
+              <Image src={Location} alt="" class="icon" />
+              <div class="icon-para">
+                <p>34c Refinery Road, Victoria Street, NYC.</p>
+                <p>34c Refinery Road, Victoria Street, NYC.</p>
+              </div>
+            </div>
+            <div class="phone-icon">
+              <Image src={Phone} alt="" class="icon" />
+              <div class="icon-para">
+                <p>+ 45 345 678 981</p>
+                <p>+ 45 345 678 982</p>
+              </div>
+            </div>
+            <div class="mail-icon">
+              <Image src={Mail} alt="" class="icon" />
+              <div class="icon-para">
+                <p>info@example.com</p>
+                <p>admin@example.com</p>
+              </div>
+            </div>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    form h3 {
+      text-align: justify;
+      margin: 30px 0;
+    }
+    .contact {
+      margin: 70px 0;
+    }
+    .contact-us {
+      text-align: center;
+    }
+
+    .contact-sect {
+      display: flex;
+      /* align-items: center; */
+      width: 100%;
+      margin: 50px 0;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-inp {
+      width: 70%;
+      height: 75vh;
+    }
+
+    form {
+      margin: 30px 80px;
+    }
+
+    label {
+      color: #6a6a6a;
+    }
+
+    .input {
+      display: block;
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    .input input {
+      width: 100%;
+      height: 3rem;
+      border: 1px solid #e2e2e2;
+      padding-left: 10px;
+      font-size: 14px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 5rem;
+      border: 1px solid #e2e2e2;
+    }
+
+    .send-btn {
+      width: 150px;
+      display: block;
+    }
+
+    .contact-card {
+      width: 30%;
+      text-align: left;
+      height: 80vh;
+    }
+
+    .hurry {
+      font-family: "Herr Von Muellerhoff", cursive;
+      font-size: 70px;
+      letter-spacing: 8px;
+      font-weight: lighter;
+      color: var(--color-secondary);
+    }
+
+    .contact-us-heading {
+      letter-spacing: 8px;
+    }
+
+    .address {
+      margin-top: 30px;
+    }
+
+    .phone-icon,
+    .location-icon,
+    .mail-icon {
+      margin-top: 50px;
+      display: flex;
+      align-items: center;
+    }
+
+    .icon-para {
+      margin-left: 15px;
+    }
+
+    .icon-para p {
+      margin: 0;
+      line-height: 25px;
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    @media screen and (max-width: 1024px) {
+      form {
+        margin: 30px 60px;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      .location-icon,
+      .phone-icon,
+      .mail-icon {
+        margin-top: 20px;
+      }
+
+      .icon {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      form {
+        margin: 30px 40px;
+      }
+
+      .address {
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      .location-icon,
+      .phone-icon,
+      .mail-icon {
+        display: block;
+        text-align: center;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .contact-sect {
+        flex-direction: column-reverse;
+      }
+
+      .contact-inp,
+      .contact-card {
+        width: 100%;
+      }
+
+      /* .contact-card {
+        height: 60vh;
+      } */
+
+      .address {
+        margin-top: 85px;
+      }
+    }
+  </style>
+</section>
