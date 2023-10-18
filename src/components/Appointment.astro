@@ -16,27 +16,6 @@ import Mail from "../../public/images/mail-svgrepo-com.svg";
       <div class="contact-inp">
         <form action="">
           <div class="input">
-            <label for="date">Appointmet Date (required)</label><br />
-            <input
-              type="date"
-              name="date"
-              id="date"
-              autocomplete="on"
-              placeholder="mm/dd/yyyy"
-              required
-            />
-          </div>
-          <div class="input">
-            <label for="time">Appointment Time</label><br />
-            <input
-              type="time"
-              name="time"
-              id="time"
-              autocomplete="on"
-              required
-            />
-          </div>
-          <div class="input">
             <label for="fullname">Your Name (required)</label><br />
             <input
               type="text"
@@ -53,6 +32,27 @@ import Mail from "../../public/images/mail-svgrepo-com.svg";
               type="email"
               name="email"
               id="email"
+              autocomplete="on"
+              required
+            />
+          </div>
+          <div class="input">
+            <label for="date">Appointmet Date (required)</label><br />
+            <input
+              type="date"
+              name="date"
+              id="date"
+              autocomplete="on"
+              placeholder="mm/dd/yyyy"
+              required
+            />
+          </div>
+          <div class="input">
+            <label for="time">Appointment Time</label><br />
+            <input
+              type="time"
+              name="time"
+              id="time"
               autocomplete="on"
               required
             />
@@ -102,7 +102,8 @@ import Mail from "../../public/images/mail-svgrepo-com.svg";
       margin: 30px 0;
     }
     .contact {
-      margin: 70px 0;
+      padding-bottom: 50px;
+      padding-top: 130px;
     }
     .contact-us {
       text-align: center;
