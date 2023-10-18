@@ -50,11 +50,13 @@ import Mail from "../../public/images/mail-svgrepo-com.svg";
               <Image src={Location} alt="" class="icon" />
               <div class="icon-para">
                 <p>34c Refinery Road, Victoria Street, NYC.</p>
+                <p>34c Refinery Road, Victoria Street, NYC.</p>
               </div>
             </div>
             <div class="phone-icon">
               <Image src={Phone} alt="" class="icon" />
               <div class="icon-para">
+                <p>+ 45 345 678 981</p>
                 <p>+ 45 345 678 982</p>
               </div>
             </div>
@@ -62,6 +64,7 @@ import Mail from "../../public/images/mail-svgrepo-com.svg";
               <Image src={Mail} alt="" class="icon" />
               <div class="icon-para">
                 <p>info@example.com</p>
+                <p>admin@example.com</p>
               </div>
             </div>
           </div>
@@ -161,6 +164,11 @@ import Mail from "../../public/images/mail-svgrepo-com.svg";
 
     .icon-para {
       margin-left: 15px;
+    }
+
+    .icon-para p {
+      margin: 0;
+      line-height: 25px;
     }
 
     .icon {
