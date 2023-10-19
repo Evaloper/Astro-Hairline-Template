@@ -1,6 +1,7 @@
 ---
 export interface Props {
   dark?: boolean;
+  height?: string;
 }
 
 const { dark = false } = Astro.props as Props;
@@ -16,7 +17,7 @@ const { dark = false } = Astro.props as Props;
     /* border-radius: 10px; */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    height: 80vh;
+    /* height: 80vh; */
   }
 
   @media screen and (max-width: 600px) {
@@ -28,5 +29,6 @@ const { dark = false } = Astro.props as Props;
   .dark {
     background: var(--color-secondary);
     color: #fff;
+    height: 80vh;
   }
 </style>
