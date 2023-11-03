@@ -13,5 +13,9 @@
     "@astrojs/react": "^3.0.3",
     "astro": "^3.3.0",
     "rehype-external-links": "^3.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.39.0",
+    "@types/node": "^20.8.7"
   }
 }
